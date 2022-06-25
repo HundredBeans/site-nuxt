@@ -1,6 +1,8 @@
 <template>
-  <div class="prose">
+  <div
+    class="prose w-full h-[100%] flex justify-center items-center flex-col mx-auto px-6"
+  >
     <!-- <NuxtWelcome /> -->
-    <h1>Hello World</h1>
+    <h1 class="!text-5xl">Hello There!</h1>
   </div>
 </template>
