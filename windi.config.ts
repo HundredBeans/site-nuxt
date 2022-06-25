@@ -10,11 +10,12 @@ export default defineConfig({
     'border-hard': 'border-dark-800 dark:border-light-900',
   },
   plugins: [
-    require('@windicss/plugin-icons')
+    require('windicss/plugin/typography')({
+      fonts: {
+        'body': 'Poppins, sans-serif',
+      },
+      dark: true
+    }),
+    require('@windicss/plugin-icons'),
   ],
-  theme: {
-    fontFamily: {
-      sans: ['Poppins', 'Inter var', 'sans-serif'],
-    }
-  }
 })
