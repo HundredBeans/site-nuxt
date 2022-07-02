@@ -1,6 +1,7 @@
 <template>
   <main class="text-center bg-hard h-screen w-full transition-all duration-250">
     <LayoutHeader />
+    <LayoutNavigation />
     <slot />
   </main>
 </template>
