@@ -1,14 +1,16 @@
 <template>
-  <header class="flex gap-6 p-4 fixed blur-md w-full">
+  <header class="flex gap-4 p-4 fixed blur-md w-full">
     <BaseSpacer />
-    <BaseLink
-      v-for="route in headerRoutes"
-      :key="route.label"
-      v-bind="route"
-      :active="route.to === routePath"
-    >
-      {{ route.label }}
-    </BaseLink>
+    <div class="flex gap-6">
+      <BaseLink
+        v-for="route in headerRoutes"
+        :key="route.label"
+        v-bind="route"
+        :active="route.to === routePath"
+      >
+        {{ route.label }}
+      </BaseLink>
+    </div>
     <BaseDivider />
     <ThemeSwitcher />
   </header>
