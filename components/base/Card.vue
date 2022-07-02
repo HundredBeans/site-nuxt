@@ -1,5 +1,5 @@
 <template>
-  <div class="py-3 rounded-md border-hard">
+  <div class="rounded-md border-soft bg-soft">
     <slot></slot>
   </div>
 </template>
