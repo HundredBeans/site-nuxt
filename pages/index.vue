@@ -6,3 +6,9 @@
     <h1 class="!text-5xl">Hello There!</h1>
   </div>
 </template>
+
+<script setup>
+useHead({
+  title: "Home",
+});
+</script>
