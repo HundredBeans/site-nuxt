@@ -3,13 +3,15 @@
 </template>
 
 <script setup>
-import { isDark } from "@/composables/dark";
-import { useToggle } from "@vueuse/core";
-
-const toggleDark = useToggle(isDark);
+const colorMode = useColorMode();
+function toggleDark() {
+  colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
+}
 const themeIcon = computed(() => {
-  console.log("isDark", isDark.value);
-  if (isDark.value) {
+  if (colorMode.unknown) {
+    return "";
+  }
+  if (colorMode.value === "dark") {
     return "icon-sun";
   } else {
     return "icon-moon";
