@@ -1,16 +1,39 @@
 <template>
-  <header class="flex gap-4 p-4 fixed blur-md w-full">
+  <header class="flex gap-6 p-4 fixed blur-md w-full">
     <BaseSpacer />
-    <BaseLink to="/"> Home </BaseLink>
-    <BaseLink to="/"> Projects </BaseLink>
     <BaseLink
-      to="https://read.cv/hundredbeans"
-      target="_blank"
-      rel="noreferrer"
+      v-for="route in headerRoutes"
+      :key="route.label"
+      v-bind="route"
+      :active="route.to === routePath"
     >
-      About
+      {{ route.label }}
     </BaseLink>
     <BaseDivider />
     <ThemeSwitcher />
   </header>
 </template>
+
+<script setup>
+const route = useRoute();
+const routePath = route.path;
+
+const headerRoutes = [
+  {
+    to: "/",
+    label: "Home",
+  },
+  {
+    to: "/projects",
+    label: "Projects",
+  },
+  {
+    to: "/bookmarks",
+    label: "Bookmarks",
+  },
+  {
+    to: "/about",
+    label: "About",
+  },
+];
+</script>
