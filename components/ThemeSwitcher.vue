@@ -1,14 +1,18 @@
 <template>
-  <BaseButtonIcon
-    @click="toggleTheme"
-    :icon="isDark ? 'icon-sun' : 'icon-moon'"
-  ></BaseButtonIcon>
+  <BaseButtonIcon @click="toggleDark()" :icon="themeIcon"></BaseButtonIcon>
 </template>
 
 <script setup>
-const isDark = useDark();
+import { isDark } from "@/composables/dark";
+import { useToggle } from "@vueuse/core";
 
-function toggleTheme() {
-  isDark.value = !isDark.value;
-}
+const toggleDark = useToggle(isDark);
+const themeIcon = computed(() => {
+  console.log("isDark", isDark.value);
+  if (isDark.value) {
+    return "icon-sun";
+  } else {
+    return "icon-moon";
+  }
+});
 </script>
