@@ -1,3 +1,4 @@
+import { parseUrl } from "@/helpers/utils";
 import { Bookmarks } from "../src/bookmarks";
 
 const runtimeConfig = useRuntimeConfig();
@@ -14,11 +15,8 @@ const bookmark = new Bookmarks();
  */
 const handleBookmarkBot = async (message) => {
   const { text } = message;
-  const isUrl = text.match(
-    /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
-  );
-  if (isUrl) {
-    const url = isUrl[0];
+  const {isValid, url} = parseUrl(text);
+  if (isValid) {
     const title = text.replace(url, "").trim();
     const returnedBookmark = await bookmark.addBookmark({ url, title });
     return `Bookmark added with id: ${returnedBookmark.id}`;
