@@ -9,7 +9,8 @@ export default defineNuxtConfig({
       privateKey: ''
     },
     telegram: {
-      token: ''
+      token: '',
+      bookmarkToken: ''
     }
   },
   modules: [
