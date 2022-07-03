@@ -16,5 +16,8 @@
     "nuxt": "3.0.0-rc.4",
     "nuxt-windicss": "^2.4.2",
     "windicss": "^3.5.5"
+  },
+  "dependencies": {
+    "firebase-admin": "^11.0.0"
   }
 }
