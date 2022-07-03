@@ -7,6 +7,11 @@ const whitelistedUsername = ["Fadafuq"];
 
 const bookmark = new Bookmarks();
 
+/**
+ * TODO: 
+ * [ ] Add bookmark category (article, package, tools, etc.)
+ * [ ] Add bookmark type (public or private)
+ */
 const handleBookmarkBot = async (message) => {
   const { text } = message;
   const isUrl = text.match(
