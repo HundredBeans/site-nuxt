@@ -7,6 +7,9 @@ export default defineNuxtConfig({
       projectId: '',
       clientEmail: '',
       privateKey: ''
+    },
+    telegram: {
+      token: ''
     }
   },
   modules: [

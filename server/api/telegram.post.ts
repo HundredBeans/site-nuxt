@@ -1,4 +1,5 @@
-const telegramToken = "5534632993:AAGCuzUG0ED98uxruxsQnIt0J8ehg4_5Hkk"
+const runtimeConfig = useRuntimeConfig()
+const telegramToken = runtimeConfig.telegram.token
 
 export default defineEventHandler(async (event) => {
   const body = await useBody(event)
