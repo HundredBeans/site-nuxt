@@ -2,7 +2,7 @@
   <div class="md:hidden contents" ref="navbar">
     <Transition>
       <BaseCard class="fixed bottom-8 right-4 w-40 mb-8" v-if="isOpen">
-        <div class="flex flex-col py-3 text-center">
+        <nav class="flex flex-col py-3 text-center">
           <BaseLink
             v-for="route in headerRoutes"
             :key="route.label"
@@ -11,7 +11,7 @@
           >
             {{ route.label }}
           </BaseLink>
-        </div>
+        </nav>
       </BaseCard>
     </Transition>
     <BaseButton class="w-40 px-4 fixed bottom-4 right-4" @click="toggleOpen">
