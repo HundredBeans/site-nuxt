@@ -2,12 +2,11 @@
   <div class="md:hidden contents" ref="navbar">
     <Transition>
       <BaseCard class="fixed bottom-8 right-4 w-40 mb-8" v-if="isOpen">
-        <div class="flex flex-col py-3">
+        <div class="flex flex-col py-3 text-center">
           <BaseLink
             v-for="route in headerRoutes"
             :key="route.label"
             v-bind="route"
-            :active="route.to === routePath"
             class="py-2"
           >
             {{ route.label }}

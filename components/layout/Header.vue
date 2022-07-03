@@ -7,7 +7,6 @@
           v-for="route in headerRoutes"
           :key="route.label"
           v-bind="route"
-          :active="route.to === routePath"
         >
           {{ route.label }}
         </BaseLink>
@@ -23,4 +22,5 @@ import { headerRoutes } from "@/helpers/constant";
 
 const route = useRoute();
 const routePath = route.path;
+console.log("routePath", routePath);
 </script>

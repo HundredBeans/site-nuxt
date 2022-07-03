@@ -22,5 +22,10 @@ export default defineNuxtConfig({
     preference: 'system', // default value of $colorMode.preference
     fallback: 'light', // fallback value if not system preference found
     classSuffix: ''
+  },
+  router: {
+    options: {
+      linkActiveClass: 'opacity-100',
+    }
   }
 })
