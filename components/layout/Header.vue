@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex gap-4 p-4 fixed blur-md w-full">
+  <nav class="flex gap-4 p-4 fixed backdrop-blur-md backdrop-filter w-full">
     <BaseSpacer />
     <template class="md:contents hidden">
       <div class="flex gap-6">
