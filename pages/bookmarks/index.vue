@@ -3,7 +3,7 @@
     <div class="px-6">
       <h1>Bookmarks</h1>
       <p class="opacity-80">
-        List of resources, articles, tools, and other links that I saved
+        List of resources, articles, books, and other links that I saved
         personally
       </p>
     </div>
@@ -19,6 +19,9 @@
 </template>
 
 <script setup>
+useHead({
+  title: "Bookmarks",
+});
 const { data } = await useFetch("/api/bookmarks");
 const { bookmarks } = data.value;
 </script>
