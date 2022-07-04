@@ -27,7 +27,7 @@ export class Bookmarks {
     };
   }
 
-  async getBookrmarks() {
+  async getBookmarks() {
     const bookmarksSnapshot = await this.db.get();
     return bookmarksSnapshot.docs.map((doc) => ({
       id: doc.id,
