@@ -1,17 +1,18 @@
 <template>
-  <div class="bg-hard transition-all duration-250 h-full">
-    <LayoutHeader />
-    <LayoutNavigation />
-    <main class="prose mx-auto text-center h-full w-full pt-14">
-      <slot />
-    </main>
-  </div>
+  <LayoutHeader />
+  <LayoutNavigation />
+  <main class="prose mx-auto text-center w-full h-full pt-14">
+    <slot />
+  </main>
 </template>
 
 <script setup>
 useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} - Hundred Beans` : "Hundred Beans";
+  },
+  bodyAttrs: {
+    class: "bg-hard transition-all duration-250 min-h-full",
   },
 });
 </script>
@@ -87,5 +88,12 @@ h6 {
 #root,
 #__nuxt {
   isolation: isolate;
+}
+
+.prose a {
+  text-decoration: none;
+}
+.prose {
+  max-width: 80ch;
 }
 </style>
