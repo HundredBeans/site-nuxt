@@ -1,7 +1,10 @@
 <template>
   <div class="md:hidden contents" ref="navbar">
     <Transition>
-      <BaseCard class="fixed bottom-8 right-4 w-40 mb-8" v-if="isOpen">
+      <BaseCard
+        class="fixed bottom-8 right-4 w-40 mb-8 z-1 shadow-lg"
+        v-if="isOpen"
+      >
         <nav class="flex flex-col py-3 text-center">
           <BaseLink
             v-for="route in headerRoutes"
@@ -14,7 +17,10 @@
         </nav>
       </BaseCard>
     </Transition>
-    <BaseButton class="w-40 px-4 fixed bottom-4 right-4" @click="toggleOpen">
+    <BaseButton
+      class="w-40 px-4 fixed bottom-4 right-4 z-1 shadow-lg"
+      @click.stop="toggleOpen"
+    >
       {{ !isOpen ? "Show Navigation" : "Hide Navigation" }}
     </BaseButton>
   </div>
