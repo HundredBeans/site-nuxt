@@ -8,7 +8,11 @@
           class="!m-0 rounded-t-md h-36 w-full object-cover"
           :src="data.images[0]"
         />
-        <BaseLink :to="url" class="text-lg font-bold p-4 truncate no-underline">
+        <BaseLink
+          :to="url"
+          target="_blank"
+          class="text-lg font-bold p-4 truncate no-underline"
+        >
           {{ data.title }}
         </BaseLink>
       </div>
