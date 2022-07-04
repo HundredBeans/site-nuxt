@@ -1,9 +1,9 @@
 <template>
   <div
-    class="w-full h-[100%] flex justify-center items-center flex-col mx-auto px-6"
+    class="w-full h-full flex justify-center items-center flex-col mx-auto px-6"
   >
     <!-- <NuxtWelcome /> -->
-    <h1 class="!text-5xl">Hello There!</h1>
+    <h1 class="!text-5xl">Hello World!</h1>
   </div>
 </template>
 
