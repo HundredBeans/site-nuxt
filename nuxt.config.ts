@@ -13,6 +13,12 @@ export default defineNuxtConfig({
       bookmarkToken: ''
     }
   },
+  meta: {
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'manifest', href: '/site.webmanifest' }
+    ]
+  },
   modules: [
     'nuxt-windicss',
     '@vueuse/nuxt',
