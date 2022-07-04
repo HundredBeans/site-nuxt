@@ -94,6 +94,6 @@ h6 {
   text-decoration: none;
 }
 .prose {
-  max-width: 80ch;
+  max-width: 90ch;
 }
 </style>
