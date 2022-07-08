@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main class="prose mx-auto text-center pb-12">
     <div class="px-6">
       <h1>Bookmarks</h1>
       <p class="opacity-80">
@@ -21,7 +21,7 @@
         :url="bookmark.url"
       ></LinkCard>
     </div>
-  </div>
+  </main>
 </template>
 
 <script setup>

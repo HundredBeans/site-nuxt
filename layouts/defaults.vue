@@ -1,9 +1,9 @@
 <template>
   <LayoutHeader />
   <LayoutNavigation />
-  <main class="prose mx-auto text-center w-full h-full pt-14">
-    <slot />
-  </main>
+  <!-- <main class="prose mx-auto text-center w-full h-full py-14"> -->
+  <slot />
+  <!-- </main> -->
 </template>
 
 <script setup>
@@ -41,6 +41,10 @@ body,
 #__nuxt {
   height: 100%;
 }
+#__nuxt > main {
+  padding-top: 3.5rem;
+}
+
 /*
   Typographic tweaks!
   4. Add accessible line-height

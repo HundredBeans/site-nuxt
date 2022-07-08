@@ -1,7 +1,7 @@
 <template>
-  <div class="px-6">
+  <main class="prose mx-auto text-center">
     <h1>Projects</h1>
-  </div>
+  </main>
 </template>
 
 <script setup>
