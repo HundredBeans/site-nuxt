@@ -17,10 +17,9 @@ const bookmark = new Bookmarks();
 const handleBookmarkBot = async (message) => {
   const { text, message_id: messageId } = message;
   const { isValid, url } = parseUrl(text);
-  const splittedText = text.split(" ");
-  if (splittedText[0] === "update_category") {
-    const category = splittedText[1];
-    const id = splittedText[2];
+  const [botName, command, ...params] = text.split(" ");
+  if (command === "update_category") {
+    const [category, id] = params
     const data = {
       category,
     };
@@ -53,7 +52,7 @@ const handleBookmarkBot = async (message) => {
               bookmarkCategories.map(category => {
                 return {
                   text: category,
-                  switch_inline_query_current_chat: `update_category: ${category} ${addedBookmark.id}`,
+                  switch_inline_query_current_chat: `update_category ${category} ${addedBookmark.id}`,
                 }
               })
             ],
