@@ -14,11 +14,11 @@ const bookmark = new Bookmarks();
  * [ ] Add bookmark type (public or private)
  */
 const handleBookmarkBot = async (message) => {
-  const { text } = message;
+  const { text, message_id: messageId } = message;
   const {isValid, url} = parseUrl(text);
   if (isValid) {
     const title = text.replace(url, "").trim();
-    const returnedBookmark = await bookmark.addBookmark({ url, title });
+    const returnedBookmark = await bookmark.addBookmark({ url, title, messageId });
     return `Bookmark added with id: ${returnedBookmark.id}`;
   } else {
     return "Please input a valid url";
@@ -45,8 +45,25 @@ export default defineEventHandler(async (event) => {
     return reply("You are not allowed to use this bot");
   }
   if (token === bookmarkToken) {
-    const bookmarkResult = await handleBookmarkBot(message);
-    return reply(bookmarkResult);
+    // const bookmarkResult = await handleBookmarkBot(message);
+    return {
+      method: "sendMessage",
+      chat_id: message.chat.id,
+      text: JSON.stringify(message, null, 2),
+      reply_markup: {
+        keyboard: [
+          {
+            text: "Testing 1"
+          },
+          {
+            text: "Testing 2"
+          }
+        ],
+        input_field_placeholder: "Select Category"
+      },
+      reply_to_message_id: message.message_id
+    }
+    // return reply(bookmarkResult);
   }
   // TODO: Parse message
   return reply("Hello world");
