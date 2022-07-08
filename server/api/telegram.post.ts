@@ -5,6 +5,7 @@ const runtimeConfig = useRuntimeConfig();
 const telegramToken = runtimeConfig.telegram.token;
 const bookmarkToken = runtimeConfig.telegram.bookmarkToken;
 const whitelistedUsername = ["Fadafuq"];
+const bookmarkCategories = ["Article", "Resource", "Tool", "Video", "Other"];
 
 const bookmark = new Bookmarks();
 
@@ -16,17 +17,57 @@ const bookmark = new Bookmarks();
 const handleBookmarkBot = async (message) => {
   const { text, message_id: messageId } = message;
   const { isValid, url } = parseUrl(text);
+  const splittedText = text.split(" ");
+  if (splittedText[0] === "update_category") {
+    const category = splittedText[1];
+    const id = splittedText[2];
+    const data = {
+      category,
+    };
+    try {
+      await bookmark.updateBookmark(id, data);
+      return {
+        text: `Update category for ${id} success`,
+        options: {},
+      };
+    } catch (error) {
+      return {
+        text: `Update category for ${id} failed: ${error.message}`,
+        options: {},
+      };
+    }
+  }
   if (isValid) {
     const title = text.replace(url, "").trim();
-    const returnedBookmark = await bookmark.addBookmark({
-      url,
-      title,
-      messageId,
-    });
-    return `Bookmark added with id: ${returnedBookmark.id}`;
-  } else {
-    return "Please input a valid url";
+    try {
+      const addedBookmark = await bookmark.addBookmark({
+        url,
+        title,
+        messageId,
+      });
+      return {
+        text: `Select the bookmark category for ${url}`,
+        options: {
+          reply_markup: {
+            inline_keyboard: [
+              bookmarkCategories.map(category => {
+                return {
+                  text: category,
+                  switch_inline_query_current_chat: `update_category: ${category} ${addedBookmark.id}`,
+                }
+              })
+            ],
+          },
+        },
+      };
+    } catch (error) {
+      return {
+        text: `Add bookmark failed: ${error.message}`,
+        options: {},
+      };
+    }
   }
+  return { text: "Message not valid", options: {} };
 };
 
 export default defineEventHandler(async (event) => {
@@ -41,37 +82,19 @@ export default defineEventHandler(async (event) => {
       message: "Token is not match",
     };
   }
-  const reply = (text: string) => ({
+  const reply = (text: string, options?: any) => ({
     method: "sendMessage",
     chat_id: message.chat.id,
     text,
+    ...options,
   });
   if (!whitelistedUsername.includes(message.from.username)) {
     return reply("You are not allowed to use this bot");
   }
   if (token === bookmarkToken) {
-    // const bookmarkResult = await handleBookmarkBot(message);
-    return {
-      method: "sendMessage",
-      chat_id: message.chat.id,
-      text: JSON.stringify(message, null, 2),
-      reply_markup: {
-        keyboard: [
-          [
-            {
-              text: "Testing 1",
-            },
-            {
-              text: "Testing 2",
-            },
-          ],
-        ],
-        input_field_placeholder: "Select Category",
-      },
-      reply_to_message_id: message.message_id
-    };
-    // return reply(bookmarkResult);
+    const bookmarkResult = await handleBookmarkBot(message);
+    return reply(bookmarkResult.text, bookmarkResult.options);
   }
   // TODO: Parse message
-  return reply("Hello world");
+  return reply(JSON.stringify(body, null, 2));
 });
