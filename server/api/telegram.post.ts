@@ -62,7 +62,6 @@ export default defineEventHandler(async (event) => {
         ],
         input_field_placeholder: "Select Category"
       },
-      reply_to_message_id: message.message_id
     }
     // return reply(bookmarkResult);
   }
