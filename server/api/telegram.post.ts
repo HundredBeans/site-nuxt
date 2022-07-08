@@ -30,6 +30,7 @@ export default defineEventHandler(async (event) => {
   const { message } = body;
   const query = useQuery(event);
   const { token } = query;
+  console.log('body', body)
 
   if (token !== telegramToken && token !== bookmarkToken) {
     return {
