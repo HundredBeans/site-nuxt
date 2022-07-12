@@ -1,18 +1,17 @@
 import { parseUrl } from "@/helpers/utils";
+import { bookmarksCategory } from "@/helpers/constant";
 import { Bookmarks } from "../src/bookmarks";
 
 const runtimeConfig = useRuntimeConfig();
 const telegramToken = runtimeConfig.telegram.token;
 const bookmarkToken = runtimeConfig.telegram.bookmarkToken;
 const whitelistedUsername = ["Fadafuq"];
-const bookmarkCategories = ["Article", "Resource", "Tool", "Video", "Other"];
-
+const bookmarkCategories = bookmarksCategory.map(category => category.text)
 const bookmark = new Bookmarks();
 
 /**
  * TODO:
- * [ ] Add bookmark category (article, package, tools, etc.)
- * [ ] Add bookmark type (public or private)
+ * [X] Add bookmark category (article, package, tools, etc.)
  */
 const handleBookmarkBot = async (message) => {
   const { text, message_id: messageId } = message;

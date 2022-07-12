@@ -16,3 +16,26 @@ export const headerRoutes = [
     label: "About",
   },
 ];
+
+export const bookmarksCategory = [
+  {
+    icon: 'icon-box',
+    text: 'Resource'
+  },
+  {
+    icon: 'icon-file-document',
+    text: 'Article'
+  },
+  {
+    icon: 'icon-terminal',
+    text: 'Tool'
+  },
+  {
+    icon: 'icon-cast',
+    text: 'Video'
+  },
+  {
+    icon: 'icon-database',
+    text: 'Other'
+  }
+]
