@@ -9,6 +9,7 @@
           v-for="route in headerRoutes"
           :key="route.label"
           v-bind="route"
+          :is-nav="true"
         >
           {{ route.label }}
         </BaseLink>

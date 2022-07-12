@@ -34,7 +34,7 @@ export default defineNuxtConfig({
   },
   router: {
     options: {
-      linkActiveClass: 'opacity-100',
+      linkActiveClass: '!opacity-100',
     }
   }
 })

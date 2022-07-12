@@ -1,8 +1,20 @@
 <template>
   <NuxtLink
-    class="text-hard opacity-70 hover:opacity-100 transition-opacity duration-150"
+    class="text-hard transition-opacity duration-150"
+    :class="
+      isNav ? 'opacity-70 hover:opacity-100' : 'opacity-100 hover:opacity-70'
+    "
     v-bind="$attrs"
   >
     <slot />
   </NuxtLink>
 </template>
+
+<script setup>
+defineProps({
+  isNav: {
+    type: Boolean,
+    default: false,
+  },
+});
+</script>

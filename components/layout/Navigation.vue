@@ -10,6 +10,7 @@
             v-for="route in headerRoutes"
             :key="route.label"
             v-bind="route"
+            :is-nav="true"
             class="py-2"
           >
             {{ route.label }}
