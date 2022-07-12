@@ -2,13 +2,11 @@
   <BaseCard>
     <div class="flex flex-col text-left">
       <div class="relative">
-        <BaseCard
-          class="absolute right-2 top-2 p-1 px-2 shadow-md flex items-center"
-          v-if="tag"
-        >
-          <i :class="tagIcon" class="icon-sm"></i>
-          <span class="prose-sm font-bold pl-2">{{ tag }} </span>
-        </BaseCard>
+        <BaseTagIcon
+          :tag-icon="tagIcon"
+          :tag="tag"
+          class="absolute right-2 top-2"
+        ></BaseTagIcon>
         <img
           class="!m-0 rounded-t-md h-36 w-full object-cover"
           :src="thumbnail"
