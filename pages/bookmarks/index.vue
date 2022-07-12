@@ -3,9 +3,8 @@
     <div class="px-6">
       <h1>Bookmarks</h1>
       <p class="opacity-80">
-        List of resources, articles, videos, tools, and other links that I saved
-        personally. I use this to keep track of things I find interesting. The
-        lists here are updated using Telegram and its Webhook API.
+        List of resources, articles, videos, tools, and other links that I find
+        interesting. Updated via personal Telegram and its Webhook API.
         <BaseLink
           to="https://github.com/HundredBeans/site-nuxt/blob/main/server/api/telegram.post.ts"
           target="_blank"
@@ -14,7 +13,7 @@
         >
       </p>
     </div>
-    <div class="flex flex-wrap gap-2 py-4 justify-center">
+    <div class="flex flex-wrap gap-2 py-4 px-6 justify-center">
       <BaseTagIcon
         tag="All"
         tag-icon="icon-folder"
