@@ -6,7 +6,7 @@ const runtimeConfig = useRuntimeConfig();
 const telegramToken = runtimeConfig.telegram.token;
 const bookmarkToken = runtimeConfig.telegram.bookmarkToken;
 const whitelistedUsername = ["Fadafuq"];
-const bookmarkCategories = bookmarksCategory.map(category => category.text)
+const bookmarkCategories = bookmarksCategory.map((category) => category.text);
 const bookmark = new Bookmarks();
 
 /**
@@ -17,8 +17,59 @@ const handleBookmarkBot = async (message) => {
   const { text, message_id: messageId } = message;
   const { isValid, url } = parseUrl(text);
   const [botName, command, ...params] = text.split(" ");
+  if (command === "select_category") {
+    const [id] = params;
+    // Do something
+    return {
+      text: `Select the bookmark category for ${id}`,
+      options: {
+        reply_markup: {
+          inline_keyboard: [
+            bookmarkCategories.map((category) => {
+              return {
+                text: category,
+                switch_inline_query_current_chat: `update_category ${id} ${category}`,
+              };
+            }),
+          ],
+        },
+      },
+    };
+  }
+  if (command === "update_title") {
+    const [id, ...rest] = params;
+    try {
+      const title = rest.join(" ");
+      await bookmark.updateBookmark(id, { title });
+      return {
+        text: `Update title for ${id} success`,
+        options: {},
+      };
+    } catch (error) {
+      return {
+        text: `Update title for ${id} failed: ${error.message}`,
+        options: {},
+      };
+    }
+  }
+  if (command === "update_description") {
+    const [id, ...rest] = params;
+    try {
+      const description = rest.join(" ");
+      await bookmark.updateBookmark(id, { description });
+      return {
+        text: `Update description for ${id} success`,
+        options: {},
+      };
+    } catch (error) {
+      return {
+        text: `Update description for ${id} failed: ${error.message}`,
+        options: {},
+      };
+    }
+  }
   if (command === "update_category") {
-    const [category, id] = params
+    const [id, category] = params;
     const data = {
       category,
     };
@@ -38,22 +89,35 @@ const handleBookmarkBot = async (message) => {
   if (isValid) {
     const title = text.replace(url, "").trim();
     try {
-      const addedBookmark = await bookmark.addBookmark({
+      const response = await fetch(
+        `https://jsonlink.io/api/extract?url=${url}`
+      );
+      const linkData = await response.json();
+      const bookmarkData = {
         url,
-        title,
+        title: title || linkData.title,
+        description: linkData.description,
+        thumbnail: linkData.images.length ? linkData.images[0] : "",
         messageId,
-      });
+      };
+      const addedBookmark = await bookmark.addBookmark(bookmarkData);
       return {
-        text: `Select the bookmark category for ${url}`,
+        text: `Retrieved URL with title: ${bookmarkData.title}, description: ${bookmarkData.description}, thumbnail: ${bookmarkData.thumbnail}. Update data for ${url}`,
         options: {
           reply_markup: {
             inline_keyboard: [
-              bookmarkCategories.map(category => {
-                return {
-                  text: category,
-                  switch_inline_query_current_chat: `update_category ${category} ${addedBookmark.id}`,
-                }
-              })
+              {
+                text: "Title",
+                switch_inline_query_current_chat: `update_title ${addedBookmark.id}`,
+              },
+              {
+                text: "Description",
+                switch_inline_query_current_chat: `update_description ${addedBookmark.id}`,
+              },
+              {
+                text: "Category",
+                switch_inline_query_current_chat: `select_category ${addedBookmark.id}`,
+              },
             ],
           },
         },
