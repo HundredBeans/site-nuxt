@@ -12,6 +12,7 @@ const bookmark = new Bookmarks();
 /**
  * TODO:
  * [X] Add bookmark category (article, package, tools, etc.)
+ * [ ] Handle types
  */
 const handleBookmarkBot = async (message) => {
   const { text, message_id: messageId } = message;
@@ -19,9 +20,10 @@ const handleBookmarkBot = async (message) => {
   const [botName, command, ...params] = text.split(" ");
   if (command === "select_category") {
     const [id] = params;
+    const {url: bookmarkUrl} = await bookmark.getBookmark(id) as any
     // Do something
     return {
-      text: `Select the bookmark category for ${id}`,
+      text: `Select the bookmark category for ${bookmarkUrl}`,
       options: {
         reply_markup: {
           inline_keyboard: [
