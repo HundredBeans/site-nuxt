@@ -3,8 +3,9 @@
     <div class="px-6">
       <h1>Bookmarks</h1>
       <p class="opacity-80">
-        List of resources, articles, books, and other links that I saved
-        personally. I use this to keep track of things I find interesting.
+        List of resources, articles, videos, tools, and other links that I saved
+        personally. I use this to keep track of things I find interesting. The
+        lists here are updated using Telegram and its Webhook API.
         <BaseLink
           to="https://github.com/HundredBeans/site-nuxt/blob/main/server/api/telegram.post.ts"
           target="_blank"
@@ -18,16 +19,26 @@
         class="h-full w-72"
         v-for="bookmark in bookmarks"
         :key="bookmark.id"
-        :url="bookmark.url"
+        v-bind="bookmark"
+        :tag="bookmark.category"
+        :tag-icon="getIcon(bookmark.category)"
       ></LinkCard>
     </div>
   </main>
 </template>
 
 <script setup>
+import { bookmarksCategory } from "@/helpers/constant";
+
 useHead({
   title: "Bookmarks",
 });
 const { data } = await useFetch("/api/bookmarks");
 const { bookmarks } = data.value;
+const getIcon = (category) => {
+  const selectedCategory = bookmarksCategory.find(
+    ({ text }) => text === category
+  );
+  return selectedCategory ? selectedCategory.icon : "";
+};
 </script>
