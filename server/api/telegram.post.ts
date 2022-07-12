@@ -106,18 +106,20 @@ const handleBookmarkBot = async (message) => {
         options: {
           reply_markup: {
             inline_keyboard: [
-              {
-                text: "Title",
-                switch_inline_query_current_chat: `update_title ${addedBookmark.id}`,
-              },
-              {
-                text: "Description",
-                switch_inline_query_current_chat: `update_description ${addedBookmark.id}`,
-              },
-              {
-                text: "Category",
-                switch_inline_query_current_chat: `select_category ${addedBookmark.id}`,
-              },
+              [
+                {
+                  text: "Title",
+                  switch_inline_query_current_chat: `update_title ${addedBookmark.id}`,
+                },
+                {
+                  text: "Description",
+                  switch_inline_query_current_chat: `update_description ${addedBookmark.id}`,
+                },
+                {
+                  text: "Category",
+                  switch_inline_query_current_chat: `select_category ${addedBookmark.id}`,
+                },
+              ],
             ],
           },
         },
