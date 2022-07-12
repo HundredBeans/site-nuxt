@@ -6,6 +6,7 @@
           :tag-icon="tagIcon"
           :tag="tag"
           class="absolute right-2 top-2"
+          @tagIconClick="$emit('tagIconClick')"
         ></BaseTagIcon>
         <img
           class="!m-0 rounded-t-md h-36 w-full object-cover"
