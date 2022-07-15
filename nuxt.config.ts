@@ -11,6 +11,14 @@ export default defineNuxtConfig({
     telegram: {
       token: '',
       bookmarkToken: ''
+    },
+    public: {
+      firebase: {
+        projectId: '',
+        appId: '',
+        apiKey: '',
+        measurementId: ''
+      }
     }
   },
   meta: {
