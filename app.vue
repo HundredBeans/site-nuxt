@@ -1,5 +1,8 @@
 <template>
   <NuxtLayout name="defaults">
+    <NuxtLoadingIndicator
+      :color="$colorMode.value === 'dark' ? '#f5f5f5' : '#262626'"
+    />
     <NuxtPage />
   </NuxtLayout>
 </template>
