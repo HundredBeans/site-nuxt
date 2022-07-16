@@ -14,7 +14,7 @@
     "eslint": "^8.18.0",
     "eslint-plugin-nuxt": "^3.2.0",
     "firebase": "^9.9.0",
-    "nuxt": "3.0.0-rc.4",
+    "nuxt": "3.0.0-rc.5",
     "nuxt-windicss": "^2.4.2",
     "windicss": "^3.5.5"
   },
