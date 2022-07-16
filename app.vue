@@ -8,23 +8,9 @@
 </template>
 
 <script setup>
-import { getAnalytics, logEvent } from "firebase/analytics";
+import useAnalytics from "@/composables/analytics";
 
-const { $firebaseApp } = useNuxtApp();
-const route = useRoute();
-const analytics = ref();
-
-onMounted(() => {
-  analytics.value = getAnalytics($firebaseApp);
-  analytics.value.app.automaticDataCollectionEnabled = true;
-});
-
-watch(
-  () => route.fullPath,
-  () => {
-    logEvent(analytics.value, "page_view");
-  }
-);
+useAnalytics();
 </script>
 
 <style>
