@@ -1,5 +1,10 @@
 {
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
   "extends": [
-    "plugin:nuxt/recommended"
-  ]
+    "plugin:nuxt/recommended",
+    "@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser"
 }
