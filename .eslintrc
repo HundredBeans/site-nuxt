@@ -1,10 +1,16 @@
 {
+  "root": true,
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
   "parserOptions": {
     "ecmaVersion": 2020
   },
   "extends": [
-    "plugin:nuxt/recommended",
-    "@typescript-eslint"
-  ],
-  "parser": "@typescript-eslint/parser"
+    "@nuxtjs/eslint-config-typescript",
+    "plugin:prettier/recommended",
+    "plugin:nuxt/recommended"
+  ]
 }

@@ -8,16 +8,18 @@
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^3.1.4",
-    "@typescript-eslint/eslint-plugin": "^5.30.6",
-    "@typescript-eslint/parser": "^5.30.6",
+    "@nuxtjs/eslint-config-typescript": "^10.0.0",
     "@vueuse/core": "^8.7.5",
     "@vueuse/nuxt": "^8.7.5",
     "@windicss/plugin-icons": "^1.0.2",
     "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-nuxt": "^3.2.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "firebase": "^9.9.0",
     "nuxt": "3.0.0-rc.5",
     "nuxt-windicss": "^2.4.2",
+    "prettier": "^2.7.1",
     "windicss": "^3.5.5"
   },
   "dependencies": {
