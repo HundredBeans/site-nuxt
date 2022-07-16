@@ -31,24 +31,31 @@
 </template>
 
 <script setup>
-const props = defineProps({
+defineProps({
   url: {
     type: String,
+    required: true,
   },
   title: {
     type: String,
+    required: true,
   },
   tag: {
     type: String,
+    required: false,
+    default: "",
   },
   tagIcon: {
     type: String,
+    default: "",
   },
   description: {
     type: String,
+    default: "",
   },
   thumbnail: {
     type: String,
+    required: true,
   },
 });
 </script>

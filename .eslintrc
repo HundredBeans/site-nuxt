@@ -12,5 +12,8 @@
     "@nuxtjs/eslint-config-typescript",
     "plugin:prettier/recommended",
     "plugin:nuxt/recommended"
-  ]
+  ],
+  "rules": {
+    "vue/multi-word-component-name": "off"
+  }
 }

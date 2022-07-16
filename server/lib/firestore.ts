@@ -3,7 +3,7 @@ import { getFirestore } from "firebase-admin/firestore";
 
 let firebaseInstance;
 
-const runtimeConfig = useRuntimeConfig()
+const runtimeConfig = useRuntimeConfig();
 
 const initialize = () => {
   if (firebaseInstance) return;
@@ -11,11 +11,11 @@ const initialize = () => {
     credential: cert({
       projectId: runtimeConfig.firebase.projectId,
       clientEmail: runtimeConfig.firebase.clientEmail,
-      privateKey: runtimeConfig.firebase.privateKey
+      privateKey: runtimeConfig.firebase.privateKey,
     }),
   });
 };
 
-initialize()
+initialize();
 
 export const firestore = getFirestore();

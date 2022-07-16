@@ -25,6 +25,7 @@
       ></BaseTagIcon>
       <BaseTagIcon
         v-for="category in bookmarksCategory"
+        :key="category.text"
         :tag="category.text"
         :tag-icon="category.icon"
         class="hover:cursor-pointer"
@@ -38,9 +39,9 @@
     </div>
     <div class="flex flex-wrap gap-4 justify-center pt-4">
       <LinkCard
-        class="h-full w-72"
         v-for="bookmark in filteredBookmarks"
         :key="bookmark.id"
+        class="h-full w-72"
         v-bind="bookmark"
         :tag="bookmark.category"
         :tag-icon="getIcon(bookmark.category)"

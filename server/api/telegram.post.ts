@@ -1,6 +1,6 @@
+import { Bookmarks } from "../src/bookmarks";
 import { parseUrl } from "@/helpers/utils";
 import { bookmarksCategory } from "@/helpers/constant";
-import { Bookmarks } from "../src/bookmarks";
 
 const runtimeConfig = useRuntimeConfig();
 const telegramToken = runtimeConfig.telegram.token;
@@ -17,10 +17,10 @@ const bookmark = new Bookmarks();
 const handleBookmarkBot = async (message) => {
   const { text, message_id: messageId } = message;
   const { isValid, url } = parseUrl(text);
-  const [botName, command, ...params] = text.split(" ");
+  const [, command, ...params] = text.split(" ");
   if (command === "select_category") {
     const [id] = params;
-    const {url: bookmarkUrl} = await bookmark.getBookmark(id) as any
+    const { url: bookmarkUrl } = (await bookmark.getBookmark(id)) as any;
     // Do something
     return {
       text: `Select the bookmark category for ${bookmarkUrl}`,
@@ -141,7 +141,6 @@ export default defineEventHandler(async (event) => {
   const { message } = body;
   const query = useQuery(event);
   const { token } = query;
-  console.log("body", body);
 
   if (token !== telegramToken && token !== bookmarkToken) {
     return {

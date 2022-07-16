@@ -1,5 +1,5 @@
 <template>
-  <BaseButtonIcon @click="toggleDark()" :icon="themeIcon"></BaseButtonIcon>
+  <BaseButtonIcon :icon="themeIcon" @click="toggleDark()"></BaseButtonIcon>
 </template>
 
 <script setup>
