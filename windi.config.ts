@@ -19,17 +19,4 @@ export default defineConfig({
     }),
     require("@windicss/plugin-icons"),
   ],
-  theme: {
-    extend: {
-      typography: {
-        DEFAULT: {
-          css: {
-            ul: {
-              padding: "0px",
-            },
-          },
-        },
-      },
-    },
-  },
 });
