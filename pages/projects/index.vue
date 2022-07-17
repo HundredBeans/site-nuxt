@@ -11,6 +11,7 @@
         <ProjectCard
           v-for="project in list"
           :key="project.id"
+          class="w-full"
           :url="project._path"
           v-bind="project"
         />
