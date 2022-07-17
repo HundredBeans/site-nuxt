@@ -7,11 +7,14 @@
       </p>
     </div>
     <div class="flex flex-wrap gap-8 py-4 px-6 justify-center">
-      <ProjectCard
-        v-for="project in projects"
-        :key="project.id"
-        v-bind="project"
-      />
+      <ContentList v-slot="{ list }" path="/projects">
+        <ProjectCard
+          v-for="project in list"
+          :key="project.id"
+          :url="project._path"
+          v-bind="project"
+        />
+      </ContentList>
     </div>
   </main>
 </template>
@@ -20,32 +23,4 @@
 useHead({
   title: "Projects",
 });
-
-const projects = [
-  {
-    title: "Invitree.id",
-    url: "",
-    description: `Digital Invitation website where user can create and share their
-          invitation. The Invitation cover all the conventational invitation
-          needs with many other features.`,
-    categories: [
-      "Fullstack",
-      "Serverless",
-      "Product (Digital Invitation - Web)",
-    ],
-  },
-  {
-    title: "Tukulsa",
-    url: "",
-    description: `Online chatbot via LINE platform which can automatically respond to
-          users' chat and requests in order to make a purchase of a prepaid
-          voucher for all cellular operators within Indonesia. The chatbot uses
-          NLP build with TensorFlow (Python).`,
-    categories: [
-      "Fullstack",
-      "Machine Learning",
-      "Product (Digital Payment - Chatbot)",
-    ],
-  },
-];
 </script>
