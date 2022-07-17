@@ -44,7 +44,13 @@ export default defineNuxtConfig({
       { rel: "manifest", href: "/site.webmanifest" },
     ],
   },
-  modules: ["nuxt-windicss", "@vueuse/nuxt", "@nuxtjs/color-mode"],
+  modules: [
+    "nuxt-windicss",
+    "@vueuse/nuxt",
+    "@nuxtjs/color-mode",
+    "@nuxt/content",
+  ],
+  content: {},
   colorMode: {
     preference: "system", // default value of $colorMode.preference
     fallback: "light", // fallback value if not system preference found
