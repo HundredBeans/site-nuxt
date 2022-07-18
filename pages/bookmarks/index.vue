@@ -57,8 +57,10 @@ import { bookmarksCategory } from "@/helpers/constant";
 useHead({
   title: "Bookmarks",
 });
-const { data } = await useFetch("/api/bookmarks");
-const { bookmarks } = data.value;
+const { data } = await useAsyncData("bookmarks", () =>
+  $fetch("/api/bookmarks")
+);
+const { bookmarks } = data && data.value;
 const getIcon = (category) => {
   const selectedCategory = bookmarksCategory.find(
     ({ text }) => text === category
