@@ -11,6 +11,8 @@
         <nuxt-img
           class="!m-0 rounded-t-md h-36 w-full object-cover"
           :src="thumbnail"
+          loading="lazy"
+          :alt="title"
         />
       </div>
       <div class="p-4 flex flex-col">

@@ -1,5 +1,9 @@
 <template>
-  <BaseButtonIcon :icon="themeIcon" @click="toggleDark()"></BaseButtonIcon>
+  <BaseButtonIcon
+    :icon="themeIcon"
+    name="Theme Switcher"
+    @click="toggleDark()"
+  ></BaseButtonIcon>
 </template>
 
 <script setup>
