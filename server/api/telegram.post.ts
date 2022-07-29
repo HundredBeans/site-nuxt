@@ -97,8 +97,8 @@ const handleBookmarkBot = async (message) => {
       const linkData = await response.json();
       const bookmarkData = {
         url,
-        title: title || linkData.title,
-        description: linkData.description,
+        title: title || linkData.title || "No Title",
+        description: linkData.description || "No Description",
         thumbnail: linkData.images.length ? linkData.images[0] : "",
         messageId,
       };
