@@ -99,7 +99,9 @@ const handleBookmarkBot = async (message) => {
         url,
         title: title || linkData.title || "No Title",
         description: linkData.description || "No Description",
-        thumbnail: linkData.images.length ? linkData.images[0] : "",
+        thumbnail: linkData.images.length
+          ? linkData.images[0]
+          : "https://via.placeholder.com/600x400?text=No+Thumbnail",
         messageId,
       };
       const addedBookmark = await bookmark.addBookmark(bookmarkData);
