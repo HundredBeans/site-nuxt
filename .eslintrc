@@ -14,6 +14,6 @@
     "plugin:nuxt/recommended"
   ],
   "rules": {
-    "vue/multi-word-component-name": "off"
+    "vue/multi-word-component-names": "off"
   }
 }
