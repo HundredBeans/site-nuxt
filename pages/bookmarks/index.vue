@@ -16,7 +16,7 @@
     <div class="flex flex-wrap gap-2 py-4 px-6 justify-center">
       <BaseTagIcon
         tag="All"
-        tag-icon="icon-folder"
+        tag-icon="gg:folder"
         class="hover:cursor-pointer"
         :class="
           activeCategory === null ? 'opacity-100' : 'opacity-50 shadow-none'

@@ -53,6 +53,7 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxt/content",
     "@nuxt/image-edge",
+    "nuxt-icon",
   ],
   content: {},
   colorMode: {

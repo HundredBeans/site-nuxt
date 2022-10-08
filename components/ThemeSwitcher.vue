@@ -16,9 +16,9 @@ const themeIcon = computed(() => {
     return "";
   }
   if (colorMode.value === "dark") {
-    return "icon-sun";
+    return "gg:sun";
   } else {
-    return "icon-moon";
+    return "gg:moon";
   }
 });
 </script>

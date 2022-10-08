@@ -19,23 +19,23 @@ export const headerRoutes = [
 
 export const bookmarksCategory = [
   {
-    icon: "icon-box",
+    icon: "gg:box",
     text: "Resource",
   },
   {
-    icon: "icon-file-document",
+    icon: "gg:file-document",
     text: "Article",
   },
   {
-    icon: "icon-terminal",
+    icon: "gg:terminal",
     text: "Tool",
   },
   {
-    icon: "icon-cast",
+    icon: "gg:cast",
     text: "Video",
   },
   {
-    icon: "icon-database",
+    icon: "gg:database",
     text: "Other",
   },
 ];

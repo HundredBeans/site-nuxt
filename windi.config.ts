@@ -17,6 +17,5 @@ export default defineConfig({
       },
       dark: true,
     }),
-    require("@windicss/plugin-icons"),
   ],
 });

@@ -3,19 +3,19 @@
     class="flex gap-4 p-4 px-5 fixed backdrop-blur-md backdrop-filter w-full z-1"
   >
     <BaseSpacer />
-    <template class="md:contents hidden">
+    <div class="md:contents hidden">
       <div class="flex gap-6">
         <BaseLink
-          v-for="route in headerRoutes"
-          :key="route.label"
-          v-bind="route"
+          v-for="headerRoute in headerRoutes"
+          :key="headerRoute.label"
+          v-bind="headerRoute"
           :is-nav="true"
         >
-          {{ route.label }}
+          {{ headerRoute.label }}
         </BaseLink>
       </div>
       <BaseDivider />
-    </template>
+    </div>
     <ThemeSwitcher />
   </nav>
 </template>
