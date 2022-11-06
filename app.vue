@@ -2,6 +2,10 @@
   <div>
     <LayoutHeader />
     <LayoutNavigation />
+    <!-- Back To Top Button -->
+    <div class="hidden md:block fixed bottom-4 right-8 z-1 flex gap-4">
+      <BackToTop />
+    </div>
     <NuxtLoadingIndicator
       :color="$colorMode.value === 'dark' ? '#f5f5f5' : '#262626'"
     />
@@ -14,7 +18,7 @@ import useAnalytics from "@/composables/analytics";
 
 useHead({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} - Hundred Beans` : "Hundred Beans";
+    return titleChunk ? `${titleChunk} — Hundred Beans` : "Hundred Beans";
   },
   bodyAttrs: {
     class: "bg-hard transition-all duration-250 min-h-full",

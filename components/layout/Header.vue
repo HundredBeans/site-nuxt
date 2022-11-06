@@ -22,8 +22,4 @@
 
 <script setup>
 import { headerRoutes } from "@/helpers/constant";
-
-const route = useRoute();
-const routePath = route.path;
-console.log("routePath", routePath);
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <main class="prose mx-auto text-center pb-12">
+  <main class="prose mx-auto text-left pb-12">
     <div class="px-6">
       <h1>Projects</h1>
       <p class="opacity-80">

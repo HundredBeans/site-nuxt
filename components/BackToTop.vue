@@ -1,17 +1,15 @@
 <template>
-  <BaseLink @click="backToTop">
-    <span class="flex items-center">
-      Back to top
-      <i class="icon-arrow-up ml-2"></i>
-    </span>
-  </BaseLink>
+  <BaseButton
+    v-if="showScrollTop"
+    class="px-4 shadow-xl border-soft"
+    @click="scrollTop"
+  >
+    Back to Top <icon name="gg:arrow-long-up" />
+  </BaseButton>
 </template>
 
 <script setup>
-const backToTop = () => {
-  scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-};
+import useScrollTop from "@/composables/useScrollTop";
+
+const { scrollTop, showScrollTop } = useScrollTop();
 </script>

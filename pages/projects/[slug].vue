@@ -1,10 +1,10 @@
 <template>
   <main class="prose mx-auto text-left pb-12">
     <div class="px-6">
-      <BaseLink to="/projects">
+      <BaseLink to="/#projects">
         <span class="flex items-center">
-          <i class="icon-arrow-left mr-2"></i>
-          Back to project list
+          <icon name="gg:arrow-left" class="mr-2" size="1.5rem"></icon>
+          Back
         </span>
       </BaseLink>
       <br />
@@ -43,7 +43,6 @@
         </template>
       </ContentDoc>
       <br />
-      <BackToTop />
     </div>
   </main>
 </template>

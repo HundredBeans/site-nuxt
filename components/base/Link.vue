@@ -7,7 +7,11 @@
     v-bind="$attrs"
   >
     <slot />
-    <icon v-if="$attrs.target === '_blank'" name="gg:arrow-top-right" />
+    <icon
+      v-if="$attrs.target === '_blank'"
+      name="gg:arrow-top-right"
+      class="align-top"
+    />
   </NuxtLink>
 </template>
 

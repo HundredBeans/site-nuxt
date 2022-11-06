@@ -18,20 +18,19 @@
         </nav>
       </BaseCard>
     </Transition>
-    <BaseButton
-      class="w-40 px-4 fixed bottom-4 right-4 z-1 shadow-lg border-soft"
-      @click.stop="toggleOpen"
-    >
-      {{ !isOpen ? "Show Navigation" : "Hide Navigation" }}
-    </BaseButton>
+    <div class="fixed bottom-4 right-4 z-1 flex gap-4">
+      <Transition name="fade">
+        <BackToTop />
+      </Transition>
+      <BaseButton class="w-40 shadow-xl border-soft" @click.stop="toggleOpen">
+        {{ !isOpen ? "Show Navigation" : "Hide Navigation" }}
+      </BaseButton>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { headerRoutes } from "@/helpers/constant";
-
-const route = useRoute();
-const routePath = route.path;
 
 const isOpen = ref(false);
 function toggleOpen() {

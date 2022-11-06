@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-md border-soft bg-soft">
+  <div class="rounded-md bg-hard border-soft hover:bg-soft">
     <slot></slot>
   </div>
 </template>
