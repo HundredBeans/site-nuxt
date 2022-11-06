@@ -1,4 +1,6 @@
-import { defineNuxtConfig } from "nuxt";
+import { defineNuxtConfig } from "nuxt/config";
+
+const BUILD_TIMESTAMP = new Date();
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -70,7 +72,7 @@ export default defineNuxtConfig({
   },
   vite: {
     define: {
-      __BUILD_TIMESTAMP__: "new Date()",
+      __BUILD_TIMESTAMP__: BUILD_TIMESTAMP,
     },
   },
 });
