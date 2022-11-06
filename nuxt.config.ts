@@ -68,4 +68,9 @@ export default defineNuxtConfig({
       linkActiveClass: "!opacity-100",
     },
   },
+  vite: {
+    define: {
+      __BUILD_TIMESTAMP__: "new Date()",
+    },
+  },
 });

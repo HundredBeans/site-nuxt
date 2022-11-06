@@ -10,6 +10,7 @@
       :color="$colorMode.value === 'dark' ? '#f5f5f5' : '#262626'"
     />
     <NuxtPage />
+    <LayoutFooter />
   </div>
 </template>
 
@@ -18,7 +19,7 @@ import useAnalytics from "@/composables/analytics";
 
 useHead({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} — Hundred Beans` : "Hundred Beans";
+    return titleChunk ? `${titleChunk} — HundredBeans` : "HundredBeans";
   },
   bodyAttrs: {
     class: "bg-hard transition-all duration-250 min-h-full",
