@@ -28,7 +28,8 @@
         >
         <span class="text-4xl font-extrabold">Projects</span>
         <p class="opacity-80">
-          List of projects that I have created and have been published.
+          List of projects that I have created and have been published outside
+          of my workplace.
         </p>
         <div class="flex flex-wrap gap-8 justify-center">
           <ContentList v-slot="{ list }" path="/projects">
@@ -81,8 +82,21 @@
           >. See my code on
           <BaseLink to="https://github.com/hundredbeans" target="_blank"
             >Github</BaseLink
-          >. I am always open for any job oportunities either it is a freelance
-          or a full-time job
+          >
+        </p>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="relative px-4">
+        <span class="absolute text-7xl font-extrabold opacity-20 -top-8 -left-4"
+          >05</span
+        >
+        <span class="text-4xl font-extrabold">Job Availability</span>
+        <p class="opacity-80">
+          I am always open for any job oportunities either it is a freelance or
+          a full-time job as long as I can work remotely. Freelance rate:
+          $15-$30/hr depends on the roles and projects
         </p>
       </div>
     </div>

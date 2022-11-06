@@ -55,7 +55,7 @@ body,
   height: 100%;
 }
 #__nuxt > div > main {
-  padding-top: 3.5rem;
+  padding-top: 5rem;
 }
 
 /*
