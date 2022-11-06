@@ -7,6 +7,14 @@
 
 <script setup>
 const buildTime = new Date(__BUILD_TIMESTAMP__).toLocaleString("en-GB", {
+  month: "long",
+  day: "2-digit",
+  year: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
+  hour12: true,
+  // timeStyle: "long",
   timeZone: "Asia/Bangkok",
 });
 </script>
