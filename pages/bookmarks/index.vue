@@ -39,7 +39,7 @@
         @click="setActiveCategory(category.text)"
       ></BaseTagIcon>
     </div>
-    <div class="flex flex-wrap gap-4 justify-center pt-4">
+    <div v-auto-animate class="flex flex-wrap gap-4 justify-center pt-4">
       <LinkCard
         v-for="bookmark in filteredBookmarks"
         :key="bookmark.id"

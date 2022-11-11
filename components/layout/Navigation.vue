@@ -19,9 +19,7 @@
       </BaseCard>
     </Transition>
     <div class="fixed bottom-4 right-4 z-1 flex gap-4">
-      <Transition name="fade">
-        <BackToTop />
-      </Transition>
+      <BackToTop />
       <BaseButton class="w-40 shadow-xl border-soft" @click.stop="toggleOpen">
         {{ !isOpen ? "Show Navigation" : "Hide Navigation" }}
       </BaseButton>
