@@ -139,9 +139,9 @@ const handleBookmarkBot = async (message) => {
 };
 
 export default defineEventHandler(async (event) => {
-  const body = await useBody(event);
+  const body = await readBody(event);
   const { message } = body;
-  const query = useQuery(event);
+  const query = getQuery(event);
   const { token } = query;
 
   if (token !== telegramToken && token !== bookmarkToken) {
