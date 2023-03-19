@@ -8,7 +8,13 @@ export default defineNuxtConfig({
     "/": {
       static: true,
     },
+    "/projects": {
+      static: true,
+    },
     "/projects/**": {
+      static: true,
+    },
+    "/contact": {
       static: true,
     },
   },
