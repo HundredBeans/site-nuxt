@@ -72,17 +72,8 @@
         >
         <span class="text-4xl font-extrabold">Contact</span>
         <p class="opacity-80">
-          You can contact me through
-          <BaseLink to="https://linkedin.com/in/mohammad-daffa" target="_blank"
-            >LinkedIn</BaseLink
-          >
-          or
-          <BaseLink to="mailto:gm.daffa100@gmail.com" target="_blank"
-            >Email</BaseLink
-          >. See my code on
-          <BaseLink to="https://github.com/hundredbeans" target="_blank"
-            >Github</BaseLink
-          >
+          Click <BaseLink to="/contact">Here</BaseLink> to see my contact
+          details.
         </p>
       </div>
       <br />

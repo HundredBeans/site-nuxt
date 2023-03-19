@@ -3,13 +3,17 @@ export const headerRoutes = [
     to: "/",
     label: "Home",
   },
-  // {
-  //   to: "/projects",
-  //   label: "Projects",
-  // },
+  {
+    to: "/projects",
+    label: "Projects",
+  },
   {
     to: "/bookmarks",
     label: "Bookmarks",
+  },
+  {
+    to: "/contact",
+    label: "Contact",
   },
   // {
   //   to: "/about",
