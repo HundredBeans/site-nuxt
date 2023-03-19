@@ -4,6 +4,14 @@ const BUILD_TIMESTAMP = new Date();
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  routeRules: {
+    "/": {
+      static: true,
+    },
+    "/projects/**": {
+      static: true,
+    },
+  },
   runtimeConfig: {
     firebase: {
       projectId: "",
