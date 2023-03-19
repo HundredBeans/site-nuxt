@@ -56,7 +56,11 @@
             information in the message so I can get back to you!
           </p>
           <div class="py-2 flex justify-end">
-            <BaseButton type="submit" class="px-4" :disabled="sending">
+            <BaseButton
+              type="submit"
+              class="px-4 disabled:cursor-not-allowed"
+              :disabled="sending | !message"
+            >
               <icon name="gg:comment" /> Send Message
             </BaseButton>
           </div>
