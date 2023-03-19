@@ -34,8 +34,8 @@
           </li>
         </ul>
         Feel free to drop me a line anytime. Whether you have a question, a
-        comment, or just want to say hi. Just use the contact form below to send
-        me a message.
+        comment, or just want to say hi. You can also use the contact form below
+        to send me a message.
       </div>
       <br />
       <div>
